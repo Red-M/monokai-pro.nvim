@@ -8,7 +8,7 @@ M.setup = function(c, _, _)
     MasonHeaderSecondary = {
       bg = c.base.yellow,
       fg = c.base.black,
-      bold = true,
+      bold = false,
     },
     MasonHighlight = { fg = c.base.cyan },
     MasonHighlightBlock = { bg = c.base.yellow, fg = "#222222" },
@@ -21,7 +21,7 @@ M.setup = function(c, _, _)
     MasonHighlightBlockBoldSecondary = {
       bg = c.base.blue,
       fg = c.base.black,
-      bold = true,
+      bold = false,
     },
     MasonLink = { link = "LazyUrl" },
     MasonMuted = { fg = c.base.dimmed2 },
@@ -29,7 +29,7 @@ M.setup = function(c, _, _)
     MasonMutedBlockBold = {
       bg = c.base.dimmed2,
       fg = c.base.black,
-      bold = true,
+      bold = false,
     },
     MasonError = { fg = c.base.red },
     MasonHeading = { link = "LazyH2" },

@@ -7,13 +7,13 @@ M.setup = function(c, config, _)
   local spec = {
     ["@include"] = { fg = c.base.red }, -- `import`
     ["@variable"] = { fg = c.base.white },
-    ["@punctuation.delimiter"] = { fg = c.base.dimmed2 }, -- `;`
-    ["@punctuation.bracket"] = { fg = c.base.dimmed2 }, -- `(`
+    ["@punctuation.delimiter"] = { fg = c.base.white }, -- `;`
+    ["@punctuation.bracket"] = { fg = c.base.white }, -- `(`
     ["@constructor"] = { fg = c.base.red }, -- `StrictMode` in `<React.StrictMode>`
-    ["@tag.delimiter"] = { fg = c.base.dimmed2 }, -- `<`, `>` in `<div>`
+    ["@tag.delimiter"] = { fg = c.base.white }, -- `<`, `>` in `<div>`
     ["@operator"] = { fg = c.base.red }, -- `=`, `=>`
     ["@keyword"] = { fg = c.base.cyan, italic = styles.keyword.italic }, -- `const`, `export`, `default`
-    ["@parameter"] = { fg = c.base.blue, italic = styles.parameter.italic },
+    ["@parameter"] = { fg = c.base.cyan, italic = styles.parameter.italic },
     ["@string.documentation"] = { fg = c.base.dimmed3 },
     ["@type.builtin"] = { fg = c.base.cyan, italic = styles.type.italic },
     ["@_isinstance"] = { fg = c.base.green },
@@ -21,15 +21,15 @@ M.setup = function(c, config, _)
     ["@keyword.return"] = { fg = c.base.red },
     ["@keyword.operator"] = { fg = c.base.red },
     ["@method.call"] = { fg = c.base.green },
-    ["@property"] = { fg = c.base.white },
-    ["@function"] = { fg = c.base.green },
+    ["@property"] = { fg = c.base.green },
+    ["@function"] = { fg = c.base.blue },
     ["@constant.builtin"] = { fg = c.base.magenta },
     ["@tag"] = { fg = c.base.red },
     ["@tag.attribute"] = { fg = c.base.cyan, italic = styles.tag_attribute.italic },
-    ["@attribute"] = { fg = c.base.cyan },
+    ["@attribute"] = { fg = c.base.green },
     ["@conditional"] = { fg = c.base.red },
     ["@repeat"] = { fg = c.base.red },
-    ["@keyword.function"] = { fg = c.base.cyan, bold = true, italic = styles.keyword.italic },
+    ["@keyword.function"] = { fg = c.base.red, bold = true, italic = styles.keyword.italic },
     ["@number"] = { fg = c.base.magenta },
     ["@boolean"] = { fg = c.base.magenta },
     ["@type.qualifier"] = { fg = c.base.red, italic = styles.type.italic },
@@ -39,18 +39,18 @@ M.setup = function(c, config, _)
     ["@keyword.scss"] = { fg = c.base.red },
     ["@function.scss"] = { fg = c.base.cyan },
     ["@property.scss"] = { fg = c.base.green },
-    ["@string.scss"] = { fg = c.base.blue, italic = true },
+    ["@string.scss"] = { fg = c.base.blue, italic = false },
     ["@number.scss"] = { fg = c.base.magenta },
     ["@type.scss"] = { fg = c.base.cyan },
     -- cpp
-    ["@keyword.cpp"] = { fg = c.base.cyan, italic = styles.keyword.italic },
+    ["@keyword.cpp"] = { fg = c.base., italic = styles.keyword.italic },
     ["@namespace.cpp"] = { fg = c.base.green },
     ["@operator.cpp"] = { fg = c.base.red },
-    ["@type.cpp"] = { fg = c.base.blue, italic = styles.type.italic },
+    ["@type.cpp"] = { fg = c.base.cyan, italic = styles.type.italic },
     ["@variable.cpp"] = { fg = c.base.white },
     ["@constant.cpp"] = { fg = c.base.cyan },
     ["@constant.macro.cpp"] = { fg = c.base.red },
-    ["@punctuation.delimiter.cpp"] = { fg = c.sideBar.foreground },
+    ["@punctuation.delimiter.cpp"] = { fg = c.base.white },
     -- python
     ["@type.python"] = { fg = c.base.white },
     ["@keyword.python"] = { fg = c.base.cyan, italic = styles.keyword.italic },

@@ -15,11 +15,11 @@ M.setup = function(c, config, _)
     },
     RenamerTitle = isBackgroundClear and {
       fg = c.base.yellow,
-      bold = true,
+      bold = false,
     } or {
       bg = c.base.yellow,
       fg = c.base.black,
-      bold = true,
+      bold = false,
     },
   }
 end

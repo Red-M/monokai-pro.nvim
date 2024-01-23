@@ -25,7 +25,7 @@ M.setup = function(c, config, hp)
     CursorLineNr = {
       bg = c.editor.background,
       fg = c.editorLineNumber.activeForeground,
-      bold = true,
+      bold = false,
     }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
     -- CursorLineNrNC = { bg = C.bg, fg = C.lightGray }, -- CursorLineNr for inactive windows
     Directory = {
@@ -64,20 +64,20 @@ M.setup = function(c, config, hp)
       bg = c.editor.foldBackground,
     }, -- line used for closed folds
     FoldColumn = {
-      bg = c.editor.background,
+      bg = c.editor.statuscolBackground,
       fg = c.editorLineNumber.activeForeground,
     }, -- 'foldcolumn'
     SignColumn = {
-      bg = c.editor.background,
+      bg = c.editor.statuscolBackground,
     }, -- column where |signs| are displayed
     -- Substitute = { bg = C.yellow, fg = C.bg }, -- |:substitute| replacement text highlighting
     LineNr = {
-      bg = c.editor.background,
+      bg = c.editor.statuscolBackground,
       fg = c.editorLineNumber.foreground,
     }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
     MatchParen = {
       fg = c.base.yellow,
-      bold = true,
+      bold = false,
       underline = true,
     }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
     ModeMsg = {
@@ -121,7 +121,7 @@ M.setup = function(c, config, hp)
     FloatTitle = float_winBackgroundClear and {
       bg = c.editor.background,
       fg = c.base.yellow,
-      bold = true,
+      bold = false,
     } or {
       bg = c.base.yellow,
       fg = c.base.black,
@@ -135,10 +135,10 @@ M.setup = function(c, config, hp)
     }, -- Popup menu: normal item.
     PmenuSel = float_winBackgroundClear and {
       bg = hp.blend(c.editorSuggestWidget.selectedBackground, 0.7),
-      bold = true,
+      bold = false,
     } or {
       bg = c.editorSuggestWidget.selectedBackground,
-      bold = true,
+      bold = false,
     },
     PmenuSbar = {
       bg = hp.lighten(c.editorSuggestWidget.background, -10),
@@ -160,12 +160,12 @@ M.setup = function(c, config, hp)
       bg = c.editor.findMatchBackground,
       sp = c.editor.findMatchBorder,
       underline = true,
-      bold = true,
+      bold = false,
     } or {
       bg = c.base.yellow,
       fg = c.base.black,
       underline = false,
-      bold = true,
+      bold = false,
     }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
     StatusLine = {
       bg = c.statusBar.background,
@@ -184,7 +184,7 @@ M.setup = function(c, config, hp)
     TablineSel = { link = "BufferLineBufferSelected" }, -- tab pages line, active tab page label
     Title = {
       fg = c.base.yellow,
-      bold = true,
+      bold = false,
     }, -- titles for output from ":set all", ":autocmd"
     Visual = {
       bg = c.editor.selectionBackground,

@@ -6,7 +6,7 @@ M.setup = function(c, _, _)
     WildMenu = {
       bg = c.base.yellow,
       fg = c.base.black,
-      bold = true,
+      bold = false,
       underline = false,
     },
   }

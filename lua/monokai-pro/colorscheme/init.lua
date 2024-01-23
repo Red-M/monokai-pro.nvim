@@ -25,7 +25,7 @@ local hp = require("monokai-pro.color_helper")
 ---@param filter Filter
 ---@return ColorschemeOptions
 M.get = function(filter)
-  local filters = { "classic", "machine", "octagon", "pro", "ristretto", "spectrum" }
+  local filters = { "classic", "machine", "octagon", "pro", "ristretto", "spectrum", "midnightokai" }
 
   if not vim.tbl_contains(filters, filter) then
     local msg = 'Invalid filter, expected "classic", "machine", "octagon", "pro", "ristretto" or "spectrum"'
@@ -41,28 +41,30 @@ M.get = function(filter)
   local p =
     vim.tbl_deep_extend("force", monokai_palette, Config.overridePalette and Config.overridePalette(filter) or {})
 
+  local calc_bg = hp.blend(p.background, 0.75, '#000000')
   cs.editor = {
-    background = Config.transparent_background and "NONE" or p.background,
+    background = Config.transparent_background and "NONE" or calc_bg,
     foreground = p.text,
-    lineHighlightBackground = hp.blend(p.text, 0.05, p.background), -- "#fcfcfa0c", -- background: background
-    selectionBackground = hp.blend(p.dimmed1, 0.15, p.background), --"#c1c0c027", -- background: background
-    findMatchBackground = hp.blend(p.text, 0.15, p.background), -- "#fcfcfa26", -- background: background
+    lineHighlightBackground = hp.blend(p.accent2, 0.15, calc_bg), -- "#fcfcfa0c", -- background: background
+    selectionBackground = hp.blend(p.dimmed1, 0.35, calc_bg), --"#c1c0c027", -- background: background
+    findMatchBackground = hp.blend(p.accent2, 0.35, calc_bg), -- "#fcfcfa26", -- background: background
     findMatchBorder = p.accent3,
-    findMatchHighlightBackground = hp.blend(p.text, 0.15, p.background), -- "#fcfcfa26", -- background: background
-    foldBackground = hp.blend(p.text, 0.1, p.background), -- "#fcfcfa0c", -- background: background
-    wordHighlightBackground = hp.blend(p.text, 0.15, p.background), -- "#fcfcfa26", -- illuminateRead
-    selectionHighlightBackground = hp.blend(p.text, 0.15, p.background), -- "#fcfcfa26", -- illuminateText
-    wordHighlightStrongBackground = hp.blend(p.text, 0.15, p.background), -- "#fcfcfa26", -- illuminateWrite
+    findMatchHighlightBackground = hp.blend(p.accent2, 0.35, calc_bg), -- "#fcfcfa26", -- background: background
+    foldBackground = hp.blend(p.text, 0.35, calc_bg), -- "#fcfcfa0c", -- background: background
+    wordHighlightBackground = hp.blend(p.accent2, 0.35, calc_bg), -- "#fcfcfa26", -- illuminateRead
+    selectionHighlightBackground = hp.blend(p.accent2, 0.35, calc_bg), -- "#fcfcfa26", -- illuminateText
+    wordHighlightStrongBackground = hp.blend(p.accent2, 0.35, calc_bg), -- "#fcfcfa26", -- illuminateWrite
+    statuscolBackground = hp.blend(p.dimmed5, 0.75, calc_bg),
   }
 
   cs.editorLineNumber = {
-    foreground = p.dimmed4,
-    activeForeground = p.dimmed1,
+    foreground = hp.blend(p.dimmed1, 0.75, p.dimmed2),
+    activeForeground = hp.blend(p.text, 0.95, p.dimmed1),
   }
 
   cs.editorHoverWidget = {
     background = p.dimmed5,
-    border = p.background,
+    border = calc_bg,
   }
 
   cs.editorSuggestWidget = {
@@ -74,12 +76,12 @@ M.get = function(filter)
   }
 
   cs.editorIndentGuide = {
-    background = p.dimmed5, -- "#403e41",
+    background = calc_bg, -- "#403e41",
     activeBackground = p.dimmed3, -- "#5b595c",
   }
 
   cs.editorInlayHint = {
-    background = hp.blend(p.accent3, 0.1, p.background),
+    background = hp.blend(p.accent2, 0.3, calc_bg),
     foreground = hp.lighten(p.dimmed2, 3),
   }
 
@@ -90,7 +92,7 @@ M.get = function(filter)
   }
 
   cs.sideBar = {
-    background = p.dark1, -- "#221f22",
+    background = p.dark2, -- "#221f22",
     foreground = p.dimmed2, -- "#939293",
   }
 
@@ -115,11 +117,11 @@ M.get = function(filter)
     background = p.dimmed5, -- "#403e41",
     foreground = p.dimmed1, -- "#c1c0c0",
     hoverBackground = p.dimmed4, -- "#5b595c",
-    separator = p.background, -- "#272822",
+    separator = calc_bg, -- "#272822",
   }
 
   cs.scrollbarSlider = {
-    hoverBackground = hp.blend(p.dimmed1, 0.15, p.background), -- "#c1c0c026", -- background: background
+    hoverBackground = hp.blend(p.dimmed1, 0.15, calc_bg), -- "#c1c0c026", -- background: background
   }
 
   cs.gitDecoration = {
@@ -172,12 +174,12 @@ M.get = function(filter)
   }
 
   cs.tab = {
-    activeBackground = Config.transparent_background and "NONE" or p.background, -- "#272822",
+    activeBackground = Config.transparent_background and "NONE" or calc_bg, -- "#272822",
     activeBorder = p.accent3, -- "#ffd866",
-    activeForeground = p.accent3, -- "#ffd866",
-    inactiveBackground = hp.lighten(p.background, 15),
-    inactiveForeground = p.dimmed2, -- "#939293",
-    unfocusedActiveBackground = p.background, -- "#272822",
+    activeForeground = p.accent1, -- "#ffd866",
+    inactiveBackground = hp.blend(calc_bg, 0.65, '#000000'), --hp.lighten(calc_bg, 15),
+    inactiveForeground = p.dimmed3, -- "#939293",
+    unfocusedActiveBackground = p.dark2, -- "#272822",
     unfocusedActiveBorder = p.dimmed2, -- "#939293",
     unfocusedActiveForeground = p.dimmed1, -- "#c1c0c0",
   }

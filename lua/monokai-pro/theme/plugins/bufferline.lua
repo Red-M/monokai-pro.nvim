@@ -181,17 +181,17 @@ M.setup = function(c, config, hp)
     BufferLineErrorDiagnosticSelected = {
       bg = M.tab.activeBackground,
       fg = hp.blend(c.inputValidation.errorForeground, countAlpha, c.editor.background),
-      bold = true,
+      bold = false,
     },
     BufferLineErrorDiagnostic = {
       bg = M.tab.inactiveBackground,
       fg = hp.blend(c.inputValidation.errorForeground, normalAlpha * countAlpha, M.tab.inactiveBackground),
-      bold = true,
+      bold = false,
     },
     BufferLineErrorDiagnosticVisible = {
       bg = M.tab.unfocusedActiveBackground,
       fg = hp.blend(c.inputValidation.errorForeground, visibleAlpha * countAlpha, M.tab.unfocusedActiveBackground),
-      bold = true,
+      bold = false,
     },
     -- Info
     BufferLineInfoSelected = {
@@ -210,17 +210,17 @@ M.setup = function(c, config, hp)
     BufferLineInfoDiagnosticSelected = {
       bg = M.tab.activeBackground,
       fg = hp.blend(c.inputValidation.infoForeground, countAlpha, c.editor.background),
-      bold = true,
+      bold = false,
     },
     BufferLineInfoDiagnostic = {
       bg = M.tab.inactiveBackground,
       fg = hp.blend(c.inputValidation.infoForeground, normalAlpha * countAlpha, M.tab.inactiveBackground),
-      bold = true,
+      bold = false,
     },
     BufferLineInfoDiagnosticVisible = {
       bg = M.tab.unfocusedActiveBackground,
       fg = hp.blend(c.inputValidation.infoForeground, visibleAlpha * countAlpha, M.tab.unfocusedActiveBackground),
-      bold = true,
+      bold = false,
     },
     -- Hint
     BufferLineHintSelected = { link = "BufferLineInfoSelected" },
@@ -265,9 +265,9 @@ M.setup = function(c, config, hp)
       fg = M.tab.unfocusedActiveBackground,
     },
   }
-  if isBold then
-    M.addBold(bufferline_groups)
-  end
+--~   if isBold then
+--~     M.addBold(bufferline_groups)
+--~   end
 
   M.addUnderline(bufferline_groups)
 

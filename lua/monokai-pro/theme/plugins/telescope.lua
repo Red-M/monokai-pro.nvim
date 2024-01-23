@@ -17,15 +17,15 @@ M.setup = function(c, config, hp)
   return {
     TelescopeSelection = isBackgroundClear and {
       bg = hp.blend(c.editorSuggestWidget.selectedBackground, 0.3, transparent_bg),
-      bold = true,
+      bold = false,
     } or {
       bg = hp.blend(c.base.green, 0.2, result_bg),
-      bold = true,
+      bold = false,
     },
 
     TelescopeSelectionCaret = isBackgroundClear and {
       bg = hp.blend(c.editorSuggestWidget.selectedBackground, 0.3, transparent_bg),
-      bold = true,
+      bold = false,
     } or {
       bg = hp.blend(c.base.green, 0.2, result_bg),
       fg = c.base.green,
@@ -40,7 +40,7 @@ M.setup = function(c, config, hp)
     },
     TelescopePromptCounter = {
       fg = c.base.red,
-      bold = true,
+      bold = false,
     },
     TelescopeBorder = isBackgroundClear and {
       bg = c.editor.background,
@@ -51,7 +51,7 @@ M.setup = function(c, config, hp)
     },
     TelescopeMatching = {
       fg = c.base.blue,
-      bold = true,
+      bold = false,
     },
 
     TelescopePreviewLine = { link = "TelescopeSelection" },
@@ -60,7 +60,7 @@ M.setup = function(c, config, hp)
     TelescopePromptTitle = {
       bg = c.base.yellow,
       fg = c.base.black,
-      bold = true,
+      bold = false,
     },
     TelescopePromptNormal = isBackgroundClear and {
       bg = transparent_bg,
@@ -82,7 +82,7 @@ M.setup = function(c, config, hp)
     TelescopePreviewTitle = {
       bg = c.base.yellow,
       fg = c.base.black,
-      bold = true,
+      bold = false,
     },
     TelescopePreviewNormal = isBackgroundClear and {
       bg = transparent_bg,
@@ -103,7 +103,7 @@ M.setup = function(c, config, hp)
     TelescopeResultsTitle = {
       bg = c.base.yellow,
       fg = c.base.black,
-      bold = true,
+      bold = false,
     },
     TelescopeResultsNormal = isBackgroundClear and {
       bg = transparent_bg,

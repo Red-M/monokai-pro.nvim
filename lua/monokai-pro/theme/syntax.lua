@@ -37,14 +37,14 @@ M.setup = function(c, config, _)
     SpecialComment = { fg = c.base.dimmed3 }, -- special things inside a comment
     -- Debug = {}, -- debugging statements
     Underlined = { underline = true }, -- (preferred) text that stands out, HTML links
-    Bold = { bold = true },
+    Bold = { bold = false },
     -- Ignore = { }, -- (preferred) left blank, hidden  |hl-Ignore|
-    Italic = { italic = true },
+    Italic = { italic = false },
     Error = { fg = c.inputValidation.errorForeground }, -- (preferred) any erroneous construct
     Todo = {
       bg = c.editor.background,
       fg = c.base.magenta,
-      bold = true,
+      bold = false,
     }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
     javaAnnotation = { fg = c.base.dimmed2 },
   }

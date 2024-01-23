@@ -4,11 +4,11 @@ local M = {}
 --- @param hp Helper
 M.setup = function(c, _, hp)
   return {
-    CmpItemAbbrMatch = { fg = c.editorSuggestWidget.highlightForeground, bold = true }, -- text match in order
+    CmpItemAbbrMatch = { fg = c.editorSuggestWidget.highlightForeground, bold = false }, -- text match in order
     CmpItemAbbrMatchFuzzy = { link = "CmpItemAbbrMatch" }, -- text match not in order
     CmpItemMenu = { fg = hp.lighten(c.editorSuggestWidget.foreground, -15) }, -- source of cmp. Ex: Lsp | Snippet
     CmpItemAbbr = { fg = c.editorSuggestWidget.foreground }, -- text that not match
-    CmpItemAbbrDeprecated = { fg = c.editorSuggestWidget.foreground, strikethrough = true }, -- text not match of deprecated
+    CmpItemAbbrDeprecated = { fg = c.editorSuggestWidget.foreground, strikethrough = false }, -- text not match of deprecated
     CmpItemKindArray = { fg = c.base.red },
     CmpItemKindBoolean = { fg = c.base.red },
     CmpItemKindClass = { fg = c.base.cyan },

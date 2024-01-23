@@ -21,8 +21,8 @@ M.setup = function(c, config, _)
     },
 
     NvimTreeFolderName = { fg = c.sideBar.foreground },
-    NvimTreeOpenedFolderName = { fg = c.sideBar.foreground, italic = true },
-    NvimTreeEmptyFolderName = { fg = c.sideBar.foreground, italic = true },
+    NvimTreeOpenedFolderName = { fg = c.sideBar.foreground, italic = false },
+    NvimTreeEmptyFolderName = { fg = c.sideBar.foreground, italic = false },
     NvimTreeImageFile = { fg = c.base.white },
     NvimTreeSpecialFile = { fg = c.base.white },
     NvimTreeCursorLine = {
@@ -42,7 +42,7 @@ M.setup = function(c, config, _)
     NvimTreeSymlink = { fg = c.base.white },
     NvimTreeRootFolder = {
       fg = c.sideBarSectionHeader.foreground,
-      bold = true,
+      bold = false,
     },
     NvimTreeExecFile = { fg = c.base.green },
   }

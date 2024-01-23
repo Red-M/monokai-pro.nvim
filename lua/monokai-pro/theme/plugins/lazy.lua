@@ -7,12 +7,12 @@ M.setup = function(c, _, hp)
   return {
     LazyButton = { bg = c.button.background, fg = c.button.foreground },
     LazyComment = { fg = c.base.yellow },
-    LazyH1 = { bg = c.base.yellow, fg = c.base.black, bold = true },
-    LazyH2 = { fg = c.base.green, bold = true },
+    LazyH1 = { bg = c.base.yellow, fg = c.base.black, bold = false },
+    LazyH2 = { fg = c.base.green, bold = false },
     LazyButtonActive = {
       bg = c.button.hoverBackground,
       fg = c.button.foreground,
-      bold = true,
+      bold = false,
     },
     LazyNormal = {
       bg = lazy_bg,
@@ -29,7 +29,7 @@ M.setup = function(c, _, hp)
     },
     LazyUrl = { fg = c.base.cyan },
     LazyDir = { link = "LazyUrl" },
-    LazySpecial = { fg = c.base.yellow, bold = true },
+    LazySpecial = { fg = c.base.yellow, bold = false },
     LazyReasonStart = { fg = c.base.green },
     LazyReasonCmd = { fg = c.base.cyan },
   }

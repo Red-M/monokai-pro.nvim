@@ -21,7 +21,7 @@ M.setup = function(c, config, _)
     NeoTreeCursorLine = {
       bg = c.list.activeSelectionBackground,
       bg_base = sidebar_bg,
-      bold = true,
+      bold = false,
     },
     NeoTreeCursorLineSign = {
       bg = c.list.activeSelectionBackground,
@@ -34,7 +34,7 @@ M.setup = function(c, config, _)
     NeoTreeRootName = {
       -- bg = C.sideBarSectionHeader.background,
       fg = c.sideBarSectionHeader.foreground,
-      bold = true,
+      bold = false,
     },
     NeoTreeDirectoryIcon = { fg = c.sideBar.foreground },
     NeoTreeDirectoryName = { fg = c.sideBar.foreground },
@@ -59,17 +59,17 @@ M.setup = function(c, config, _)
     NeoTreeTitleBar = {
       bg = sidebar_bg,
       fg = c.base.yellow,
-      bold = true,
+      bold = false,
     },
     NeoTreeFloatTitle = {
       bg = c.base.yellow,
       fg = sidebar_bg,
-      bold = true,
+      bold = false,
     },
     NeoTreeTabActive = {
       bg = c.button.hoverBackground,
       fg = c.button.foreground,
-      bold = true,
+      bold = false,
     },
     NeoTreeTabInactive = { bg = c.button.background, fg = c.button.foreground },
     NeoTreeTabSeparatorActive = {
