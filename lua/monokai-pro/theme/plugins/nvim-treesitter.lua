@@ -43,7 +43,7 @@ M.setup = function(c, config, _)
     ["@number.scss"] = { fg = c.base.magenta },
     ["@type.scss"] = { fg = c.base.cyan },
     -- cpp
-    ["@keyword.cpp"] = { fg = c.base., italic = styles.keyword.italic },
+    ["@keyword.cpp"] = { fg = c.base.magenta, italic = styles.keyword.italic },
     ["@namespace.cpp"] = { fg = c.base.green },
     ["@operator.cpp"] = { fg = c.base.red },
     ["@type.cpp"] = { fg = c.base.cyan, italic = styles.type.italic },
