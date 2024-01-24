@@ -235,6 +235,8 @@ M.get = function(filter)
     dimmed5 = p.dimmed5, -- "#403e41",
   }
 
+  -- cs = vim.tbl_deep_extend("force", cs, Config.overrideColorscheme and Config.overrideColorscheme(cs, p, config, hp) or {})
+
   return cs
 end
 
